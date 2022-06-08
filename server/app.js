@@ -13,6 +13,9 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// AUTH ROUTES
+app.use('/auth', require('./auth'));
+
 // API ROUTES
 app.use('/api', require('./api'));
 

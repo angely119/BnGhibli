@@ -31,16 +31,21 @@ const User = db.define('user', {
 
 module.exports = User;
 
+// INSTANCE METHOD TO GENERATE TOKEN
+User.prototype.generateToken = () => {
+  return jwt.sign({ userId: this.id }, process.env.JWT);
+};
+
 // CLASS METHOD TO AUTHENTICATE PASSWORD & GENERATE TOKEN
 User.authenticate = async ({username, password}) => {
-  const user = await this.findOne({where: { username }});
+  const user = await User.findOne({ where: { username } });
   const passwordMatch = await bcrypt.compare(password, user.password); //compares user-entered password with hashedpassword in database
   if (!user || !passwordMatch) { // If user or password does not match throw error
     const error = Error('Incorrect username/password');
     error.status = 401;
     throw error;
   } // else return signed token
-    return jwt.sign({userId: user.id}, process.env.JWT);
+  return user.generateToken();
 };
 
 // CLASS METHOD TO VERIFY TOKEN
