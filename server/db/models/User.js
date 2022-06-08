@@ -1,4 +1,4 @@
-// USER MODEL
+// USERS MODEL
 const Sequelize = require('sequelize');
 const db = require('../database');
 const jwt = require('jsonwebtoken');
