@@ -1,5 +1,6 @@
 import React from "react";
-import ReactDom from "react-dom";
+import * as ReactDOMClient from 'react-dom/client';
 
-const root = createRoot(document.getElementById('root'));
+
+const root = ReactDOMClient.createRoot(document.getElementById('root'));
 root.render(<h1>HELLO WORLD</h1>);
