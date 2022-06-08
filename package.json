@@ -1,5 +1,5 @@
 {
-  "name": "bnghibli",
+  "name": "ghiblinb",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -15,12 +15,5 @@
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-router": "^5.0.0"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.18.2",
-    "@babel/preset-react": "^7.17.12",
-    "babel-loader": "^8.2.5",
-    "webpack": "^5.73.0",
-    "webpack-cli": "^4.9.2"
   }
 }
