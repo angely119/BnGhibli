@@ -5,7 +5,7 @@ const StyledHome = styled.div`
   display: flex;
   background-image: url("https://www.ghibli.jp/gallery/kazetachinu042.jpg");
   background-size: cover;
-  max-width: 100%;
+  width: 100%;
   height: 1000px;
 `;
 
@@ -40,13 +40,13 @@ const StyledLabel = styled.label`
 `;
 
 const StyledInput = styled.input`
-  width: 100%;
   border: 1px solid lightgray;
   height: 50px;
   color: #484848;
   margin-bottom: 13px;
   margin-top: 8px;
   padding-left: 10px;
+  padding-right: 10px;
   font-family: 'Montserrat', sans-serif;
   font-size: 15px;
   border-radius: 4px;
@@ -55,7 +55,27 @@ const StyledInput = styled.input`
 const CheckInOut = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
+`;
+
+const InputContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+`;
+
+const SearchButton = styled.input`
+  background-color: #FF5A5F;
+  color: white;
+  text-align: center;
+  height: 50px;
+  font-weight: 600;
+  width: 100px;
+  border-radius: 4px;
+  font-size: 15px;
+  margin-top: 9px;
+  margin-left: 271px;
+  cursor: pointer;
 `;
 
 
@@ -65,34 +85,41 @@ const Home = () => {
       <StyledSearchBox>
         <StyledHeader>Book unique places to stay and things to do.</StyledHeader>
         <form>
-          <div>
+          <InputContainer>
           <StyledLabel htmlFor='where'>WHERE</StyledLabel>
-          <StyledInput
-            name='where'
-            type='text'
-            placeholder='Anywhere'/>
-          </div>
+            <StyledInput
+              name='where'
+              type='text'
+              placeholder='Anywhere'/>
+          </InputContainer>
           <CheckInOut>
-            <div>
+            <InputContainer>
             <StyledLabel htmlFor='checkIn'>CHECK-IN</StyledLabel>
             <StyledInput
               name='checkIn'
               type='date'/>
-            </div>
-            <div>
+            </InputContainer>
+            <InputContainer>
             <StyledLabel htmlFor='checkOut'>CHECK-OUT</StyledLabel>
             <StyledInput
               name='checkOut'
               type='date'/>
-            </div>
+            </InputContainer>
           </CheckInOut>
-          <div>
+          <InputContainer>
           <StyledLabel htmlFor='guests'>GUESTS</StyledLabel>
           <StyledInput
             name='guests'
             type='text'
             placeholder='2 Guests'/>
-          </div>
+          </InputContainer>
+          <InputContainer>
+            <SearchButton
+              name='submit'
+              type='submit'
+              value='Search'
+            />
+          </InputContainer>
         </form>
       </StyledSearchBox>
     </StyledHome>
