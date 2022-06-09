@@ -5,6 +5,8 @@ const router = require('express').Router();
 router.use('/users', require('./users'));
 router.use('/rentals', require('./rentals'));
 router.use('/bookings', require('./bookings'));
+router.use('/reviews', require('./reviews'));
+
 
 // 404 Error Handler
 router.use(function (req, res, next) {
