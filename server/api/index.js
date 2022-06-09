@@ -4,6 +4,7 @@ const router = require('express').Router();
 // Matches routes
 router.use('/users', require('./users'));
 router.use('/rentals', require('./rentals'));
+router.use('/bookings', require('./bookings'));
 
 // 404 Error Handler
 router.use(function (req, res, next) {

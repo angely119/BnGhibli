@@ -26,5 +26,17 @@ router.get('/:id', async (req, res, next) => {
   }
 });
 
+// POST /api/rentals/:rentalId/bookings - Creates a booking for a rental
+router.post('/:rentalId/bookings', async (req, res, next) => {
+  try {
+    const newBooking = await Booking.create(req.body);
+    // can set guest and rental in req.body
+    res.send(await newBooking.reload({
+      include: ['guest', Rental]
+    })); // sends back the new Booking including guest and rental
+  } catch (error) {
+    next(error);
+  }
+})
 
 module.exports = router;
