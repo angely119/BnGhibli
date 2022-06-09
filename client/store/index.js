@@ -2,18 +2,19 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import { createLogger } from 'redux-logger';
+import rentalsReducer from './rentals';
 
 // What state looks like:
 // state: {
-//   auth: auth,
+//  auth: auth,
+//  rentals: [];
 // }
 
-// const reducer = combineReducers({ auth })
+const rootReducer = combineReducers({
+  // auth,
+  rentals: rentalsReducer
+});
 
-const reducer = (state = {}, action) => {
-  return state;
-};
-
-const store = createStore(reducer, applyMiddleware(thunkMiddleware, createLogger()));
+const store = createStore(rootReducer, applyMiddleware(thunkMiddleware, createLogger()));
 
 export default store;

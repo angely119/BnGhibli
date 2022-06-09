@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { SearchBox } from "./index";
+import {RentalIndex, SearchBox } from "./index";
 
-const StyledHome = styled.div`
+const Splash = styled.div`
   display: flex;
   background-image: url("https://www.ghibli.jp/gallery/kazetachinu042.jpg");
   background-size: cover;
@@ -12,9 +12,12 @@ const StyledHome = styled.div`
 
 const Home = () => {
   return (
-    <StyledHome>
-      <SearchBox />
-    </StyledHome>
+    <div>
+      <Splash>
+        <SearchBox />
+      </Splash>
+      <RentalIndex />
+    </div>
   )
 };
 

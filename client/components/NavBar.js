@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -7,7 +7,7 @@ const StyledNavBar = styled.nav`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  height: 60px;
+  height: 50px;
   padding: 10px;
   padding-left: 30px;
   border-bottom: solid grey 1px;
