@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components";
 import { fetchRentals } from "../store/rentals";
+import { DatePicker } from "antd";
 
 const StyledRentalIndex = styled.div`
 
@@ -30,6 +31,7 @@ const RentalIndex = () => {
   return(
     <div>
       <h1>HELLO THIS IS THE RENTAL INDEX</h1>
+      <DatePicker />
       {rentals.map(rental => (<p key={rental.id}>{rental.rentalName}</p>))}
     </div>
   )
