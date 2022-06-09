@@ -11,7 +11,3 @@ db.sync()
       console.log(`Listening on port ${port}`)
     })
   });
-
-// app.listen(port, function() {
-//   console.log(`Listening on port ${port}`)
-// });
