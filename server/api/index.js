@@ -2,7 +2,7 @@
 const router = require('express').Router();
 
 // Matches routes
-// router.use('/users', require('./users'));
+router.use('/users', require('./users'));
 
 // 404 Error Handler
 router.use(function (req, res, next) {
