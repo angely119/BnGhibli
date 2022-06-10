@@ -45,11 +45,11 @@ const rentalSeeds = [
     location: 'Porthaven, Ingary',
     pricePerNight: 200,
     imageUrls: [
-      'https://static.wikia.nocookie.net/studio-ghibli/images/8/81/Howl_Castle.png/revision/latest/scale-to-width-down/1000?cb=20200906005430',
+      'https://www.ghibli.jp/gallery/howl049.jpg',
+      'https://static.wikia.nocookie.net/howlscastle/images/5/51/Secret_Garden.jpg',
       'https://static.wikia.nocookie.net/studio-ghibli/images/8/8a/Howl_Door.jpg/revision/latest?cb=20201107011906',
       'https://pbs.twimg.com/media/EYFwDtcWAAA3qTt.jpg',
-      'https://www.dia.org/sites/default/files/styles/events_main/public/howl-2.jpg?itok=cVUip4u1',
-      'https://static.wikia.nocookie.net/howlscastle/images/5/51/Secret_Garden.jpg/revision/latest?cb=20120510010045'
+      'https://www.dia.org/sites/default/files/styles/events_main/public/howl-2.jpg?itok=cVUip4u1'
     ]
   },
   {
@@ -58,19 +58,19 @@ const rentalSeeds = [
     location: 'Spirit Realm',
     pricePerNight: 300,
     imageUrls: [
-      'https://static.wikia.nocookie.net/studio-ghibli/images/0/00/Bath_house_%282%29.jpg/revision/latest/scale-to-width-down/1000?cb=20181209051335',
+      'https://images.adsttc.com/media/images/6246/e768/3e4b/3186/c600/0004/slideshow/d4epnpx-9cb848c3-9d6b-48b0-beb9-fe9dce8f9460.jpg?1648813921',
       'https://i.pinimg.com/originals/e4/1c/3d/e41c3d8819a57a84b1c8a4acb49534ee.jpg',
       'https://64.media.tumblr.com/ab4b87110ec0a40b9bea497ab1c0b9ab/tumblr_oyx20gHY8B1wg7crao1_1280.jpg',
       'https://static.wikia.nocookie.net/studio-ghibli/images/9/94/Bathhouse_Top_Floor_Hall.png/revision/latest?cb=20181209051225'
     ]
   },
   {
-    rentalName: 'Kiki\'s Renovated Bakery Loft',
+    rentalName: 'Kiki\'s Newly Renovated Bakery Loft',
     rentalType: 'house',
     location: 'City of Koriko',
     pricePerNight: 125,
     imageUrls: [
-      'https://static.wikia.nocookie.net/studio-ghibli/images/0/0f/Gutiokipanja.jpg/revision/latest?cb=20181030225337',
+      'https://i.pinimg.com/564x/4e/db/3a/4edb3ac53c586f9f8044eaacf2f20d09.jpg',
       'https://static.wikia.nocookie.net/studio-ghibli/images/2/20/Kikicels_%285%29.jpg/revision/latest?cb=20200617234616',
       'https://static.wikia.nocookie.net/studio-ghibli/images/2/27/Kiki%27s_Delivery_Service_-_Ending.jpg/revision/latest/scale-to-width-down/1000?cb=20200704160447',
       'https://static.wikia.nocookie.net/studio-ghibli/images/b/b2/Kiki%27s_Delivery_Service_-_Busy_street.jpg/revision/latest/scale-to-width-down/1000?cb=20200615220626'
@@ -78,7 +78,7 @@ const rentalSeeds = [
   },
   {
     rentalName: 'Satsuki and Mei\'s Relaxing Countryhouse',
-    rentalType: 'cabin',
+    rentalType: 'house',
     location: ' Tokorozawa City, Saitama Prefecture',
     pricePerNight: 150,
     imageUrls: [
@@ -92,12 +92,48 @@ const rentalSeeds = [
     rentalName: 'Arietty\'s Spacious Underground Doll House',
     rentalType: 'house',
     location: 'Koganei, Tokyo',
-    pricePerNight: 10,
+    pricePerNight: 50,
     imageUrls: [
       'https://i.pinimg.com/originals/40/c4/7b/40c47bd887cc4ed87b9a6bd01914ee3a.jpg',
       'https://i.pinimg.com/originals/58/1d/2a/581d2a7818538dbb083ab6a77962db75.jpg',
       'https://asianwiki.com/images/f/f7/The_Secret_World_of_Arrietty.jpg',
       'https://i.pinimg.com/originals/f4/0a/25/f40a25ee33108d96cc9a75bc5f43ba11.jpg'
+    ]
+  },
+  {
+    rentalName: 'Ponyo\'s Underwater Harbor',
+    rentalType: 'harbor',
+    location: 'Tomonoura, Hiroshima Prefecture',
+    pricePerNight: 500,
+    imageUrls: [
+      'https://www.ghibli.jp/gallery/ponyo050.jpg',
+      'https://www.ghibli.jp/gallery/ponyo023.jpg',
+      'https://www.ghibli.jp/gallery/ponyo001.jpg',
+      'https://www.ghibli.jp/gallery/ponyo005.jpg'
+    ]
+  },
+  {
+    rentalName: 'Princess Mononoke\'s Minimalist Cabin',
+    rentalType: 'cabin',
+    location: 'Cedar Forest',
+    pricePerNight: 10,
+    imageUrls: [
+      'https://data.whicdn.com/images/317557760/original.jpg',
+      'https://www.ghibli.jp/gallery/mononoke023.jpg',
+      'https://64.media.tumblr.com/58139b7e80bf4793b65a3a8f2e14c335/tumblr_ojrv9zlGEF1qa9gmgo9_1280.jpg',
+      'https://64.media.tumblr.com/1bf3daade9ec1e30313efce133dd4595/tumblr_odce5dohW91uer6cyo2_1280.png'
+    ]
+  },
+  {
+    rentalName: 'Hotel Kusakaru',
+    rentalType: 'hotel',
+    location: 'Karuizawa, Nagano Prefecture',
+    pricePerNight: 800,
+    imageUrls: [
+      'https://images.lifestyleasia.com/wp-content/uploads/sites/3/2020/02/10011812/Hassan-Rashid-on-Youtube-e1579674659229-1024x545.jpg',
+      'https://www.ghibli.jp/gallery/kazetachinu050.jpg',
+      'https://i.pinimg.com/originals/d7/ba/1c/d7ba1c73c817108fdb8e9532b4934337.jpg',
+      'https://www.ghibli.jp/gallery/kazetachinu009.jpg'
     ]
   }
 ];

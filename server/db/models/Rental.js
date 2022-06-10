@@ -10,7 +10,7 @@ const Rental = db.define('rental', {
   rentalType: {
     type: Sequelize.STRING,
     validate: {
-      isIn: [['cabin', 'castle', 'house', 'bathhouse' ]]
+      isIn: [['bathhouse', 'cabin', 'castle', 'house', 'harbor', 'hotel' ]]
     },
     defaultValue: 'house'
   },

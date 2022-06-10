@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components";
 import { fetchRentals } from "../store/rentals";
 import { RentalIndexItem } from "./index";
+import { StyledRentalIndexItem } from "./RentalIndexItem";
 
 const StyledRentalIndex = styled.div`
   padding: 40px 80px
@@ -16,6 +17,11 @@ const RentalIndexHeader = styled.h1`
   padding-bottom: 10px;
 `;
 
+const RentalsContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 30px;
+`;
 
 const RentalIndex = () => {
   const rentals = useSelector((state) => state.rentals);
@@ -39,7 +45,11 @@ const RentalIndex = () => {
   return(
     <StyledRentalIndex>
       <RentalIndexHeader>Explore Ghibli'nb</RentalIndexHeader>
-      <RentalIndexItem rentals={rentals}/>
+      <RentalsContainer>
+      {rentals.map(rental => (
+        <RentalIndexItem key={rental.id} rental={rental} />
+      ))}
+  </RentalsContainer>
     </StyledRentalIndex>
   )
 };
