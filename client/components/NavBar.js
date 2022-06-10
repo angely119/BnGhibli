@@ -7,10 +7,10 @@ const StyledNavBar = styled.nav`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  height: 60px;
+  height: 70px;
   padding: 10px;
   padding-left: 30px;
-  border-bottom: solid grey 1px;
+  border-bottom: solid #dad9d4 1px;
 `;
 
 export const StyledLink = styled(Link)`
@@ -36,7 +36,7 @@ const NavBar = () => {
   return (
     <StyledNavBar>
       <LinkContainer>
-        <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzh1ST7YGDBCT54ObrjXk_ORrRGwVL366Jb48Zz6r66YP2rcl2GNFRGQPg3hUvpOXHBEY&usqp=CAU' width="59" height="59"/>
+        <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzh1ST7YGDBCT54ObrjXk_ORrRGwVL366Jb48Zz6r66YP2rcl2GNFRGQPg3hUvpOXHBEY&usqp=CAU' width="65" height="65"/>
         <StyledLink to="/home">HOME</StyledLink>
       </LinkContainer>
       <LinkContainer>

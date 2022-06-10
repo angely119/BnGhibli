@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 
 export const StyledRentalIndexItem = styled.div`
@@ -6,8 +7,16 @@ export const StyledRentalIndexItem = styled.div`
   flex-direction: column;
   flex: 1 0 21%;
   height: 386px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  &:hover {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+  }
 `;
-//   border: solid grey 1px;
 
 const StyledRentalImage = styled.div`
   background-image: url(${props => props.backgroundImage});
@@ -46,18 +55,20 @@ const RentalPriceNum = styled.span`
 
 const RentalIndexItem = (props) => {
   const { rental } = props;
+  const history = useHistory();
+
   return (
-    <StyledRentalIndexItem>
-        <StyledRentalImage backgroundImage={`${rental.imageUrls[0]}`}/>
-        <StyledRentalInfo>
-          <RentalName>{rental.rentalName}</RentalName>
-          <RentalLocation>{rental.location}</RentalLocation>
-          <RentalPrice>
-            <RentalPriceNum>{`¥${rental.pricePerNight} `}</RentalPriceNum>
-            night
-          </RentalPrice>
-        </StyledRentalInfo>
-    </StyledRentalIndexItem>
+      <StyledRentalIndexItem onClick={() => history.push(`/rentals/${rental.id}`)}>
+          <StyledRentalImage backgroundImage={`${rental.imageUrls[0]}`}/>
+          <StyledRentalInfo>
+            <RentalName>{rental.rentalName}</RentalName>
+            <RentalLocation>{rental.location}</RentalLocation>
+            <RentalPrice>
+              <RentalPriceNum>{`¥${rental.pricePerNight} `}</RentalPriceNum>
+              night
+            </RentalPrice>
+          </StyledRentalInfo>
+      </StyledRentalIndexItem>
   )
 };
 

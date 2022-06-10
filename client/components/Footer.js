@@ -10,7 +10,7 @@ const StyledFooter = styled.div`
   position: absolute;
   width:100%;
   height: 40px;
-  border-top: solid grey 1px;
+  border-top: solid #dad9d4 1px;
 `;
 
 const StyledSpan = styled.span`
@@ -19,7 +19,7 @@ const StyledSpan = styled.span`
   height: 30px;
   color: black;
   font-size: 15px;
-  margin-right: 20px;
+  margin-right: 40px;
 `;
 
 const FooterLinkContainer = styled(LinkContainer)`

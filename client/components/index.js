@@ -3,6 +3,7 @@ import App from "./App";
 import Footer from "./Footer";
 import Home from "./Home";
 import NavBar from "./NavBar";
+import RentalDetails from "./RentalDetails";
 import RentalIndex from "./RentalIndex";
 import RentalIndexItem from "./RentalIndexItem";
 import Routes from "./Routes";
@@ -13,6 +14,7 @@ export {
   Footer,
   Home,
   NavBar,
+  RentalDetails,
   RentalIndex,
   RentalIndexItem,
   Routes,

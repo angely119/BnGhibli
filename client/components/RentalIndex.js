@@ -4,7 +4,6 @@ import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components";
 import { fetchRentals } from "../store/rentals";
 import { RentalIndexItem } from "./index";
-import { StyledRentalIndexItem } from "./RentalIndexItem";
 
 const StyledRentalIndex = styled.div`
   padding: 40px 80px
