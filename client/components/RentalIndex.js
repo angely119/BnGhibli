@@ -3,11 +3,19 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components";
 import { fetchRentals } from "../store/rentals";
-import { DatePicker } from "antd";
+import { RentalIndexItem } from "./index";
 
 const StyledRentalIndex = styled.div`
-
+  padding: 40px 80px
 `;
+
+const RentalIndexHeader = styled.h1`
+  font-size: 24px;
+  font-weight: bold;
+  color: #484848;
+  padding-bottom: 10px;
+`;
+
 
 const RentalIndex = () => {
   const rentals = useSelector((state) => state.rentals);
@@ -29,11 +37,10 @@ const RentalIndex = () => {
     // The 2nd argument is a dependency array that tells useEffect to run the effect again ONLY if the dependencies in the array change
     //
   return(
-    <div>
-      <h1>HELLO THIS IS THE RENTAL INDEX</h1>
-      <DatePicker />
-      {rentals.map(rental => (<p key={rental.id}>{rental.rentalName}</p>))}
-    </div>
+    <StyledRentalIndex>
+      <RentalIndexHeader>Explore Ghibli'nb</RentalIndexHeader>
+      <RentalIndexItem rentals={rentals}/>
+    </StyledRentalIndex>
   )
 };
 

@@ -4,6 +4,7 @@ import Footer from "./Footer";
 import Home from "./Home";
 import NavBar from "./NavBar";
 import RentalIndex from "./RentalIndex";
+import RentalIndexItem from "./RentalIndexItem";
 import Routes from "./Routes";
 import SearchBox from "./SearchBox";
 
@@ -13,6 +14,7 @@ export {
   Home,
   NavBar,
   RentalIndex,
+  RentalIndexItem,
   Routes,
   SearchBox
 };
