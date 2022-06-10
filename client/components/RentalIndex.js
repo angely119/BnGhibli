@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { fetchRentals } from "../store/rentals";
 import { RentalIndexItem } from "./index";
 
+// STYLED COMPONENTS
 const StyledRentalIndex = styled.div`
   padding: 40px 80px
 `;
@@ -22,6 +23,7 @@ const RentalsContainer = styled.div`
   gap: 40px 30px;
 `;
 
+// FUNCTIONAL COMPONENT
 const RentalIndex = () => {
   const rentals = useSelector((state) => state.rentals);
   // useSelector is passed the Redux store state by default
@@ -43,7 +45,7 @@ const RentalIndex = () => {
     //
   return(
     <StyledRentalIndex>
-      <RentalIndexHeader>Explore Ghibli'nb</RentalIndexHeader>
+      <RentalIndexHeader>Explore ghibli·nb</RentalIndexHeader>
       <RentalsContainer>
       {rentals.map(rental => (
         <RentalIndexItem key={rental.id} rental={rental} />
