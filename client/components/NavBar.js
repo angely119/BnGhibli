@@ -47,11 +47,11 @@ const NavBar = () => {
     <StyledNavBar>
       <LinkContainer>
         <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzh1ST7YGDBCT54ObrjXk_ORrRGwVL366Jb48Zz6r66YP2rcl2GNFRGQPg3hUvpOXHBEY&usqp=CAU' width="65" height="65"/>
-        <StyledLogo to="/home">ghibli·nb</StyledLogo>
+        <StyledLogo to="/">ghibli·nb</StyledLogo>
       </LinkContainer>
       <LinkContainer>
-        <StyledLink to="/signup">Sign up</StyledLink>
-        <StyledLink to="/login">Log in</StyledLink>
+        <StyledLink to="/home/signup">Sign up</StyledLink>
+        <StyledLink to="/home/login">Log in</StyledLink>
       </LinkContainer>
     </StyledNavBar>
   )

@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Switch, Redirect } from 'react-router-dom';
-import { Home, RentalDetails } from './index';
+import { AuthForm, Home, RentalDetails } from './index';
 
 const Routes = () => {
   return (

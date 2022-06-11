@@ -4,6 +4,7 @@ import thunkMiddleware from 'redux-thunk';
 import { createLogger } from 'redux-logger';
 import rentalsReducer from './rentals';
 import singleRentalReducer from './singleRental';
+import authReducer from './auth';
 
 // What state looks like:
 // state: {
@@ -13,7 +14,7 @@ import singleRentalReducer from './singleRental';
 // }
 
 const rootReducer = combineReducers({
-  // auth: authReducer,,
+  auth: authReducer,
   rentals: rentalsReducer,
   singleRental: singleRentalReducer
 });

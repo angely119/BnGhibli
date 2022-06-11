@@ -1,5 +1,6 @@
 // INDEX FOR ALL REACT COMPONENTS
 import App from "./App";
+import AuthForm from "./AuthForm";
 import Footer from "./Footer";
 import Home from "./Home";
 import NavBar from "./NavBar";
@@ -12,6 +13,7 @@ import SearchBox from "./SearchBox";
 
 export {
   App,
+  AuthForm,
   Footer,
   Home,
   NavBar,

@@ -21,7 +21,8 @@ app.use('/api', require('./api'));
 
 // Serve up index.html
 app.get('*', function (req, res, next) {
-  res.sendFile(path.join(__dirname, '..', 'index.html'));
+  res.sendFile(path.join(__dirname, '..', '/public/index.html'));
+  // will throw ENOENT: no such file or directory error if path to index.html is incorrect
 });
 
 // 404 Error Handler

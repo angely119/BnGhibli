@@ -12,6 +12,13 @@ const setAuth = (auth) => {
   }
 };
 
+export const logout = () => {
+  return {
+    type: SET_AUTH,
+    auth: {}
+  }
+};
+
 // THUNK CREATORS
 
 // FETCHES THE USER OBJECT (AFTER AUTHENTICATION)
@@ -40,20 +47,22 @@ export const authenticate = (username, password, loginOrSignup) => {
       const { token } = await axios.post(`/auth/${loginOrSignup}`, {username, password}); // will either make POST /auth/login or /auth/signup based on value
       window.localStorage.setItem(token); // sets the token in localStorage
       dispatch(fetchAuthUser()); // dispatches fetchAuthUser
-    } catch (authError) {
+    } catch (error) {
       // if there is an auth error set auth as the error object in the store
-      const auth = { error: authError };
-      dispatch(setAuth(auth));
+      const authError = { error };
+      return dispatch(setAuth(authError)); // auth = {error: error}
     }
   }
 };
 
-// REMOVES TOKEN FROM LOCALSTORAGE UPON LOGOUT
-export const logout = () => {
-  window.localStorage.removeItem(TOKEN)
-  // history.push('/login') redirects after removnig token
-  return {
-    type: SET_AUTH,
-    auth: {}
+// AUTH REDUCER
+const authReducer = (state = {}, action) => {
+  switch (action.type) {
+    case SET_AUTH:
+      return action.auth;
+    default:
+      return state;
   }
-}
+};
+
+export default authReducer;
