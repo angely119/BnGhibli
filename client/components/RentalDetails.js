@@ -43,6 +43,15 @@ const MainImage = styled.div`
   height: 100%;
   background-size: cover;
   background-position: center;
+  -webkit-filter: brightness(100%);
+  &:hover {
+    -webkit-filter: brightness(70%);
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+  }
 `;
 
 const SmallImagesContainer = styled.div`
@@ -59,6 +68,15 @@ const SmallImage = styled.div`
   width: 49%;
   background-size: cover;
   background-position: center;
+  -webkit-filter: brightness(100%);
+  &:hover {
+    -webkit-filter: brightness(70%);
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+  }
 `;
 
 const RentalDetailsContainer = styled.div`

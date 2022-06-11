@@ -7,13 +7,13 @@ import singleRentalReducer from './singleRental';
 
 // What state looks like:
 // state: {
-//  auth: auth,
+//  authUser: {},
 //  rentals: [];
 //  singleRental: {};
 // }
 
 const rootReducer = combineReducers({
-  // auth,
+  // authUser: authUserReducer,
   rentals: rentalsReducer,
   singleRental: singleRentalReducer
 });

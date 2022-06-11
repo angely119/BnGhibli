@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {StyledLabel, StyledInput} from "./SearchBox";
+import {StyledLabel} from "./SearchBox";
 
 // STYLED COMPONENTS
 const RentalBookingContainer = styled.div`
