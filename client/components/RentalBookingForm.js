@@ -18,6 +18,10 @@ const RentalBookingHeader = styled.div`
   height: 28px;
   margin-bottom: 24px;
 `;
+const RentalBookingInfo = styled.div`
+  display: flex;
+  align-self: flex-end;
+`;
 
 const RentalBookingPrice = styled.span`
   font-size 20px;
@@ -28,7 +32,7 @@ const RentalBookingFormContainer = styled.div`
   display: flex;
   flex-direction: column;
   height: 112px;
-  border: solid #dad9d4 1px;
+  border: solid #b0b0b0 1px;
   border-radius: 10px;
   overflow: hidden;
 `;
@@ -44,36 +48,25 @@ const CheckInContainer = styled.div`
   flex-direction: column;
   width: 50%;
   padding: 10px;
-  border-bottom: solid #dad9d4 1px;
+  border-bottom: solid #b0b0b0 1px;
 `;
 
 const CheckOutContainer = styled(CheckInContainer)`
-  border-left: solid #dad9d4 1px;
+  border-left: solid #b0b0b0 1px;
 `;
-
-// const StyledLabel = styled.label`
-//   font-size: 12px;
-//   color: #484848;
-//   font-weight: 600;
-// `;
-
-// const StyledInput = styled.input`
-//   border: 1px solid lightgray;
-//   height: 50px;
-//   color: #484848;
-//   margin-bottom: 13px;
-//   margin-top: 8px;
-//   padding-left: 10px;
-//   padding-right: 10px;
-//   font-size: 15px;
-//   border-radius: 4px;
-// `;
 
 const BookingLabel = styled(StyledLabel)`
   font-size: 10px;
 `;
 
+const BookingInput = styled.input`
+  font-size: 12px;
+  border: none;
+`;
+
 const FormContainerBottom = styled.div`
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: 56px;
   padding: 10px;
@@ -105,29 +98,34 @@ const RentalBookingForm = (props) => {
           <RentalBookingPrice>¥{rental.pricePerNight}</RentalBookingPrice>
           <span> night</span>
         </div>
-        <div>
-          <span>{rental.reviews && avgRating(rental.reviews)}</span>
+        <RentalBookingInfo>
+          <span>{rental.reviews && avgRating(rental.reviews)} </span>
           <span>{` · ${numOfReviews ? numOfReviews : "No"} review(s)`}</span>
-        </div>
+        </RentalBookingInfo>
       </RentalBookingHeader>
-      {/* <RentalBookingFormContainer> */}
         <form>
         <RentalBookingFormContainer>
           <FormContainerTop>
             <CheckInContainer>
-            <StyledLabel htmlFor='checkIn'>CHECK-IN</StyledLabel>
-              <StyledInput
+            <BookingLabel htmlFor='checkIn'>CHECK-IN</BookingLabel>
+              <BookingInput
                 name='checkIn'
                 type='date'/>
             </CheckInContainer>
             <CheckOutContainer>
-              <StyledLabel htmlFor='checkOut'>CHECK-OUT</StyledLabel>
-                <StyledInput
+              <BookingLabel htmlFor='checkOut'>CHECK-OUT</BookingLabel>
+                <BookingInput
                   name='checkOut'
                   type='date'/>
             </CheckOutContainer>
           </FormContainerTop>
-          <FormContainerBottom>GUESTS</FormContainerBottom>
+          <FormContainerBottom>
+            <BookingLabel htmlFor='guest'>GUESTS</BookingLabel>
+                <BookingInput
+                  name='guest'
+                  type='text'
+                  placeholder='1 guest'/>
+          </FormContainerBottom>
         </RentalBookingFormContainer>
         <ReserveButton
             name='reserve'
@@ -135,7 +133,6 @@ const RentalBookingForm = (props) => {
             value='Reserve'
           />
         </form>
-      {/* </RentalBookingFormContainer> */}
     </RentalBookingContainer>
   )
 };
