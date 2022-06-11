@@ -25,13 +25,13 @@ const StyledHeader = styled.h1`
   margin-left: 5px;
 `;
 
-const StyledLabel = styled.label`
+export const StyledLabel = styled.label`
   font-size: 12px;
   color: #484848;
   font-weight: 600;
 `;
 
-const StyledInput = styled.input`
+export const StyledInput = styled.input`
   border: 1px solid lightgray;
   height: 50px;
   color: #484848;

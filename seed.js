@@ -12,28 +12,28 @@ const userSeeds = [
     username: 'howl',
     email: 'howl.pendragon@ghibli.com',
     password: 'howl',
-    profileImageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN5ib9j9TdMQrzDOKjuzQrL_T9Z46Qp2ZlWQ&usqp=CAU',
+    profileImageUrl: 'https://i.pinimg.com/736x/b3/32/0b/b3320ba9e040a01ac6fa59abc20a23f1.jpg',
     bio: 'My wife and I are thrilled to welcome guests from around the world to our wonderful bed and breakfast. We\'re huge explorers ourselves, as we\'ve never been able to stay in one place for long. Our goal is to provide a relaxing, and most of all, magical experience to all our guests.'
   },
   {
     username: 'kiki',
     email: 'kikideliveries@ghibli.com',
     password: 'kiki',
-    profileImageUrl: 'https://static.wikia.nocookie.net/studio-ghibli/images/5/59/Kiki.jpg/revision/latest?cb=20210214125850',
+    profileImageUrl: 'https://i.pinimg.com/originals/75/4a/69/754a69fc2344bd129915b3ca689032c6.jpg',
     bio: 'I started travelling by myself at a young age and have grown to love the experience of meeting new people and exploring the local spots. I currently run my own delivery service so I am more than happy to help my guests explore the town.'
   },
   {
     username: 'satsuki',
     email: 'satsukilovestotoro@ghibli.com',
     password: 'satsuki',
-    profileImageUrl: 'https://cdn.vox-cdn.com/thumbor/Nj5mi9vjISyj2xlQkHHYnLaaGQs=/68x0:713x484/1400x1400/filters:focal(68x0:713x484):format(png)/cdn.vox-cdn.com/uploads/chorus_image/image/36484530/Screen_Shot_2014-08-04_at_1.42.09_PM.0.png',
+    profileImageUrl: 'https://i.pinimg.com/736x/24/36/49/243649a932378e848902b6ee3c4efae2.jpg',
     bio: 'My little sister Mei and I moved to this beautiful countryhouse in Tokorozawa City several years ago and fell in love with the village ever since. Located in a quiet area by the Tsukamori forest, our guests can take a relaxing nap in the garden or indulge in the endless exciting outdoor activities available during the summertime.'
   },
   {
     username: 'arrietty',
     email: 'arrietty.clock@ghibli.com',
     password: 'arrietty',
-    profileImageUrl: 'https://static.wikia.nocookie.net/studio-ghibli/images/c/c7/Arrietty_Berry.jpg/revision/latest?cb=20171115034601',
+    profileImageUrl: 'https://i.pinimg.com/736x/a9/ee/aa/a9eeaa397abb69e78d4e90dfaedf1701--the-secret-world-of-arrietty-arietty.jpg',
     bio: 'My family and I have been living in this wonderful house for years. I\'m a huge fan of interior decoration and plant mom so our space aims to bring the outside in. I love to curl up with a book in the chair or take a relaxing soak in the tub by the lush garden leaves while our guests are guaranteed to leave our urban oasis feeling healed and relaxed.'
   }
 ];
@@ -53,7 +53,7 @@ const rentalSeeds = [
 
       'https://i.pinimg.com/originals/12/b5/b7/12b5b7725fc5b3b092a3a7d4e5768205.jpg',
 
-      'https://i.pinimg.com/originals/62/0a/8c/620a8cfec40dd9abfc8b008a0b87895b.png'
+      'https://i.pinimg.com/originals/16/87/b8/1687b839956908cc08911706ca63df91.jpg'
     ]
   },
   {
