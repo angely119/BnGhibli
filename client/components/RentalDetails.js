@@ -164,7 +164,8 @@ const RentalDetails = (props) => {
     const avg = reviews.reduce((avgRating, curReview) => avgRating + curReview.rating / reviews.length, 0);
     return `★ ${(Math.round(avg * 100) / 100).toFixed(2)}`;
   };
-  const defaultRentalBio = 'Born in Tokyo during the height of World War II, Hayao Mizayaki has been dreaming about the sky since early childhood. His father was the director of Miyazaki Airplane, a manufacturing concern that built parts for planes. The theme of flying, sometimes on the most fantastic aircrafts, has been crucial in Miyazaki\'s every work — starting with "Laputa: The Castle in the Sky," finding its place in "Porco Rosso" and "Howl\'s Moving Castle", and culminating in the director\'s latest work "The Wind Rises."'
+  const defaultHostBio = 'Born in Tokyo during the height of World War II, Hayao Mizayaki has been dreaming about the sky since early childhood. His father was the director of Miyazaki Airplane, a manufacturing concern that built parts for planes. The theme of flying, sometimes on the most fantastic aircrafts, has been crucial in Miyazaki\'s every work — starting with "Laputa: The Castle in the Sky," finding its place in "Porco Rosso" and "Howl\'s Moving Castle", and culminating in the director\'s latest work "The Wind Rises."';
+  const defaultHostProfile = 'http://images5.fanpop.com/image/photos/29100000/Porco-Rosso-porco-rosso-29177376-200-200.jpg';
 
   useEffect(() => {
     dispatch(fetchSingleRental(rentalId))
@@ -200,11 +201,11 @@ const RentalDetails = (props) => {
               <RentalDetailsTitle>{`hosted by ${rental.host ? rental.host.username : 'Hayao Miyazaki'}`}</RentalDetailsTitle>
               <RentalDetailsSubtitle>5 guests · 2 bedrooms · 2 beds · 1 bath</RentalDetailsSubtitle>
             </RentalDetailsHeaderLeft>
-            <RentalDetailsHostIcon image={rental.host && rental.host.profileImageUrl}/>
+            <RentalDetailsHostIcon image={rental.host ? rental.host.profileImageUrl : defaultHostProfile}/>
           </RentalDetailsHeader>
           <RentalDetailsHostBio>
             <h3>About your host:</h3>
-            <p>{rental.host ? rental.host.bio : defaultRentalBio}</p>
+            <p>{rental.host ? rental.host.bio : defaultHostBio}</p>
           </RentalDetailsHostBio>
           {/* <RentalDetailsAmenities>
             <h3>What this place offers</h3>
