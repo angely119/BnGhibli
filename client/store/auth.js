@@ -40,10 +40,10 @@ export const fetchAuthUser = (history) => {
 };
 
 // RETURNS A TOKEN ON LOGIN/SIGNUP THEN FETCHES THE USER
-export const authenticate = (username, password, loginOrSignup, history) => {
+export const authenticate = (email, password, loginOrSignup, history) => {
   return async (dispatch) => {
     try {
-      const res = await axios.post(`/auth/${loginOrSignup}`, {username, password});
+      const res = await axios.post(`/auth/${loginOrSignup}`, {email, password});
       window.localStorage.setItem(TOKEN, res.data.token);
       dispatch(fetchAuthUser(history));
     } catch (error) {

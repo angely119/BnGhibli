@@ -37,8 +37,8 @@ User.prototype.generateToken = function () {
 };
 
 // CLASS METHOD TO AUTHENTICATE PASSWORD & GENERATE TOKEN
-User.authenticate = async function ({username, password}) {
-  const user = await this.findOne({ where: { username } });
+User.authenticate = async function ({email, password}) {
+  const user = await this.findOne({ where: { email } });
   const passwordMatch = await bcrypt.compare(password, user.password);
   if (!user || !passwordMatch) {
     const error = Error('Incorrect username/password');

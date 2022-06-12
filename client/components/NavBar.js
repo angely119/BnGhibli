@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
+import { Dropdown, Menu } from "antd";
 import { ProfileBtnMenuSVG } from "./index";
 
 const StyledNavBar = styled.nav`
@@ -69,6 +70,30 @@ const ProfileButtonIcon = styled.div`
   border-radius: 50%;
 `;
 
+const menu = (
+  <Menu
+    items={[
+      {
+        key: '1',
+        label: (
+          <a target="_blank" rel="noopener noreferrer" href="https://www.antgroup.com">
+            Trips
+          </a>
+        ),
+      },
+      {
+        key: '2',
+        label: (
+          <a target="_blank" rel="noopener noreferrer" href="https://www.antgroup.com">
+            Log out
+          </a>
+        ),
+      }
+    ]}
+  />
+);
+
+// FUNCTIONAL COMPONENT
 const NavBar = () => {
   const isLoggedIn = useSelector((state) => !!state.auth.id);
   const userProfileImg = useSelector((state) => state.auth.profileImageUrl);
@@ -81,12 +106,15 @@ const NavBar = () => {
       {isLoggedIn
         ?
         <LinkContainer>
+          <Dropdown overlay={menu} placement="bottomRight">
+
           <ProfileButton type='button'>
             <div>
               <ProfileBtnMenuSVG />
             </div>
             <ProfileButtonIcon image={userProfileImg}/>
           </ProfileButton>
+          </Dropdown>
         </LinkContainer>
         :
         <LinkContainer>

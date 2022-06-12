@@ -2,8 +2,9 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { Input } from "antd";
 import { authenticate } from "../store/auth";
-import { FormContainer, FormContainerBottom, StyledInput, StyledButton } from "./RentalBookingForm";
+import { FormContainer, FormContainerBottom, StyledButton } from "./RentalBookingForm";
 
 const AuthFormContainer = styled.div`
   background-color: white;
@@ -54,7 +55,7 @@ const FormContainerTop = styled(FormContainerBottom)`
   border-top: none;
 `;
 
-const AuthFormInput = styled.input`
+const AuthFormInput = styled(Input)`
   border: none;
   height: 100%;
   font-size: 16px;
@@ -66,7 +67,7 @@ const AuthForm = (props) => {
   const error = useSelector((state) => state.auth.error);
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    dispatch(authenticate(evt.target.username.value, evt.target.password.value, evt.target.name, history));
+    dispatch(authenticate(evt.target.email.value, evt.target.password.value, evt.target.name, history));
   };
 
   return (
@@ -80,15 +81,15 @@ const AuthForm = (props) => {
         <form onSubmit={handleSubmit} name='login'>
           <FormContainer>
             <FormContainerTop>
-              <AuthFormInput name='username' type='text' placeholder='Username'/>
+              <AuthFormInput name='email' type='text' placeholder='Email' bordered={false}/>
             </FormContainerTop>
             {match && match.path === '/home/signup' &&
               <FormContainerBottom>
-                <AuthFormInput name='email' type='text' placeholder='Email'/>
+                <AuthFormInput name='name' type='text' placeholder='Full Name' bordered={false}/>
               </FormContainerBottom>
             }
             <FormContainerBottom>
-              <AuthFormInput name='password' type='password' placeholder='Password' />
+              <AuthFormInput name='password' type='password' placeholder='Password'bordered={false}/>
             </FormContainerBottom>
           </FormContainer>
           <StyledButton name='submit' type='submit' value='Submit' />
