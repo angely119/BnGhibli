@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
+import { ProfileBtnMenuSVG } from "./index";
 
 const StyledNavBar = styled.nav`
   display: flex;
@@ -67,23 +68,13 @@ const ProfileButtonIcon = styled.div`
   border-radius: 50%;
 `;
 
-const StyledGraphic = styled.svg`
-  display: block;
-  fill: none;
-  height: 16px;
-  width: 16px;
-  stroke: currentcolor;
-  stroke-width: 3;
-  overflow: visible;
-`;
-
 const NavBar = () => {
   const isLoggedIn = useSelector((state) => !!state.auth.id);
   const userProfileImg = useSelector((state) => state.auth.profileImageUrl);
   return (
     <StyledNavBar>
       <LinkContainer>
-        <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzh1ST7YGDBCT54ObrjXk_ORrRGwVL366Jb48Zz6r66YP2rcl2GNFRGQPg3hUvpOXHBEY&usqp=CAU' width="65" height="65"/>
+        <img src='/ghibli_icon.png' width="65" height="65"/>
         <StyledLogo to="/">ghibli·nb</StyledLogo>
       </LinkContainer>
       {isLoggedIn
@@ -91,13 +82,7 @@ const NavBar = () => {
         <LinkContainer>
           <ProfileButton type='button'>
             <div>
-              <StyledGraphic viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false">
-                <g fill="none" fillRule="nonzero">
-                  <path d="m2 16h28"></path>
-                  <path d="m2 24h28"></path>
-                  <path d="m2 8h28"></path>
-                </g>
-              </StyledGraphic>
+              <ProfileBtnMenuSVG />
             </div>
             <ProfileButtonIcon image={userProfileImg}/>
           </ProfileButton>

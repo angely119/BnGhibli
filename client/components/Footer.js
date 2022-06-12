@@ -36,7 +36,7 @@ const Footer = () => {
   return (
     <StyledFooter>
       <FooterLinkContainer>
-        <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzh1ST7YGDBCT54ObrjXk_ORrRGwVL366Jb48Zz6r66YP2rcl2GNFRGQPg3hUvpOXHBEY&usqp=CAU' width="45" height="45"/>
+        <img src='/ghibli_icon.png' width="45" height="45"/>
         <FooterStyledLink to="/home">ghibli·nb</FooterStyledLink>
       </FooterLinkContainer>
       <StyledSpan>Created by Angel Yang</StyledSpan>
