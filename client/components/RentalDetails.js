@@ -169,6 +169,11 @@ const RentalDetails = (props) => {
   useEffect(() => {
     dispatch(fetchSingleRental(rentalId))
   }, [dispatch]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, []);
+
   return (
     <RentalContainer>
       <RentalHeaderName>{rental.rentalName}</RentalHeaderName>
