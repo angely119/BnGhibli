@@ -39,7 +39,7 @@ export const LinkContainer = styled.div`
   height: 60px;
   width: 150px;
   margin-left: 40px;
-  margin-right: 40px;
+  margin-right: 60px;
 `;
 
 const ProfileButton = styled.button`
@@ -50,6 +50,7 @@ const ProfileButton = styled.button`
   justify-content: space-between;
   align-self: center;
   padding: 0px 9px;
+  margin-left: 50px;
   border: solid #dad9d4 1px;
   border-radius: 21px;
   background-color: white;

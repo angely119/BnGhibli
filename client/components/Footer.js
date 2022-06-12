@@ -29,7 +29,7 @@ const StyledSpan = styled.span`
   height: 30px;
   color: black;
   font-size: 15px;
-  margin-right: 55px;
+  margin-right: 60px;
 `;
 
 const Footer = () => {
