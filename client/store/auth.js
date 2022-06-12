@@ -2,6 +2,7 @@
 import axios from "axios";
 
 // ACTION TYPES
+const TOKEN = 'token';
 const SET_AUTH = 'SET_AUTH';
 
 // ACTION CREATORS
@@ -23,20 +24,17 @@ export const logout = () => {
 
 // FETCHES THE USER OBJECT (AFTER AUTHENTICATION)
 export const fetchAuthUser = () => {
-  // Obtain the token that we previously stored in window.localStorage
-  const token = window.localStorage.getItem(token);
-  if (!token) {
-    throw new Error;
-  }
-  // ELSE if there is a token return the user object
-  // GET /auth/user returns the user object after it verifies the token
   return async (dispatch) => {
-    const { data: authUser } = await axios.get('/auth/user', {
+    const token = window.localStorage.getItem(TOKEN);
+    if (!token) {
+      throw new Error;
+    }
+    const res = await axios.get('/auth/user', {
       headers: {
-        authorization: token // GET /auth/user takes in token in the authorization header to find the User
+        authorization: token
       }
     });
-    dispatch(setAuth(authUser));
+    return dispatch(setAuth(res.data));
   }
 };
 
@@ -44,11 +42,10 @@ export const fetchAuthUser = () => {
 export const authenticate = (username, password, loginOrSignup) => {
   return async (dispatch) => {
     try {
-      const { token } = await axios.post(`/auth/${loginOrSignup}`, {username, password}); // will either make POST /auth/login or /auth/signup based on value
-      window.localStorage.setItem(token); // sets the token in localStorage
-      dispatch(fetchAuthUser()); // dispatches fetchAuthUser
+      const res = await axios.post(`/auth/${loginOrSignup}`, {username, password});
+      window.localStorage.setItem(TOKEN, res.data.token);
+      dispatch(fetchAuthUser());
     } catch (error) {
-      // if there is an auth error set auth as the error object in the store
       const authError = { error };
       return dispatch(setAuth(authError)); // auth = {error: error}
     }

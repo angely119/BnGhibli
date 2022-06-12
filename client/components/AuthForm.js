@@ -1,5 +1,7 @@
 import React from "react";
+import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components";
+import { authenticate } from "../store/auth";
 
 const AuthFormContainer = styled.div`
   background-color: white;
@@ -24,13 +26,21 @@ const StyledAuthForm = styled.div`
 `;
 
 const AuthForm = () => {
+  const dispatch = useDispatch();
+  const error = useSelector((state) => state.auth.error);
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    dispatch(authenticate(evt.target.username.value, evt.target.password.value, evt.target.name))
+  };
+
   return (
     <AuthFormContainer>
-      <form>
+      <form onSubmit={handleSubmit} name='login'>
         <StyledAuthForm>
           <input name='username' type='text' placeholder='Username'/>
-          <input name='password' type='text' placeholder='Password' />
+          <input name='password' type='password' placeholder='Password' />
           <input name='submit' type='submit' value='Submit' />
+          {error && error.response ? <div> {error.response.data} </div> : <div>Success!</div>}
         </StyledAuthForm>
       </form>
     </AuthFormContainer>
