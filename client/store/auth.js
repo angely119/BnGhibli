@@ -23,7 +23,7 @@ export const logout = () => {
 // THUNK CREATORS
 
 // FETCHES THE USER OBJECT (AFTER AUTHENTICATION)
-export const fetchAuthUser = () => {
+export const fetchAuthUser = (history) => {
   return async (dispatch) => {
     const token = window.localStorage.getItem(TOKEN);
     if (!token) {
@@ -34,17 +34,18 @@ export const fetchAuthUser = () => {
         authorization: token
       }
     });
+    history.push('/home'); // Redirects to /home after user is fetched
     return dispatch(setAuth(res.data));
   }
 };
 
 // RETURNS A TOKEN ON LOGIN/SIGNUP THEN FETCHES THE USER
-export const authenticate = (username, password, loginOrSignup) => {
+export const authenticate = (username, password, loginOrSignup, history) => {
   return async (dispatch) => {
     try {
       const res = await axios.post(`/auth/${loginOrSignup}`, {username, password});
       window.localStorage.setItem(TOKEN, res.data.token);
-      dispatch(fetchAuthUser());
+      dispatch(fetchAuthUser(history));
     } catch (error) {
       const authError = { error };
       return dispatch(setAuth(authError)); // auth = {error: error}

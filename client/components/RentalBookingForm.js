@@ -28,27 +28,25 @@ const RentalBookingPrice = styled.span`
   font-weight 500;
 `;
 
-const RentalBookingFormContainer = styled.div`
+export const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
-  height: 112px;
   border: solid #b0b0b0 1px;
   border-radius: 10px;
   overflow: hidden;
 `;
 
-const FormContainerTop = styled.div`
+export const FormContainerTop = styled.div`
   display: flex;
   width: 100%;
   height: 56px;
 `;
 
-const CheckInContainer = styled.div`
+export const CheckInContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 50%;
   padding: 10px;
-  border-bottom: solid #b0b0b0 1px;
 `;
 
 const CheckOutContainer = styled(CheckInContainer)`
@@ -59,20 +57,18 @@ const BookingLabel = styled(StyledLabel)`
   font-size: 10px;
 `;
 
-const BookingInput = styled.input`
+export const StyledInput = styled.input`
   font-size: 12px;
   border: none;
 `;
 
-const FormContainerBottom = styled.div`
-  display: flex;
+export const FormContainerBottom = styled(FormContainerTop)`
   flex-direction: column;
-  width: 100%;
-  height: 56px;
   padding: 10px;
+  border-top: solid #b0b0b0 1px;
 `;
 
-const ReserveButton = styled.input`
+export const StyledButton = styled.input`
   background-color: #FF5A5F;
   margin-top: 15px;
   height: 50px;
@@ -88,7 +84,7 @@ const ReserveButton = styled.input`
 `;
 
 
-// FUNCTIONAL COMPONENTS
+// FUNCTIONAL COMPONENT
 const RentalBookingForm = (props) => {
   const { rental, numOfReviews, avgRating } = props;
   return (
@@ -104,30 +100,30 @@ const RentalBookingForm = (props) => {
         </RentalBookingInfo>
       </RentalBookingHeader>
         <form>
-        <RentalBookingFormContainer>
+        <FormContainer>
           <FormContainerTop>
             <CheckInContainer>
             <BookingLabel htmlFor='checkIn'>CHECK-IN</BookingLabel>
-              <BookingInput
+              <StyledInput
                 name='checkIn'
                 type='date'/>
             </CheckInContainer>
             <CheckOutContainer>
               <BookingLabel htmlFor='checkOut'>CHECK-OUT</BookingLabel>
-                <BookingInput
+                <StyledInput
                   name='checkOut'
                   type='date'/>
             </CheckOutContainer>
           </FormContainerTop>
           <FormContainerBottom>
             <BookingLabel htmlFor='guest'>GUESTS</BookingLabel>
-                <BookingInput
+                <StyledInput
                   name='guest'
                   type='text'
                   placeholder='1 guest'/>
           </FormContainerBottom>
-        </RentalBookingFormContainer>
-        <ReserveButton
+        </FormContainer>
+        <StyledButton
             name='reserve'
             type='submit'
             value='Reserve'

@@ -130,7 +130,7 @@ const RentalDetailsHostIcon = styled.div`
 `;
 
 const RentalDetailsHostBio = styled.div`
-  height: 210px;
+  height: auto;
   width: 100%;
   border-bottom: solid #dad9d4 1px;
   padding: 32px 0px;
@@ -164,6 +164,7 @@ const RentalDetails = (props) => {
     const avg = reviews.reduce((avgRating, curReview) => avgRating + curReview.rating / reviews.length, 0);
     return `★ ${(Math.round(avg * 100) / 100).toFixed(2)}`;
   };
+  const defaultRentalBio = 'Born in Tokyo during the height of World War II, Hayao Mizayaki has been dreaming about the sky since early childhood. His father was the director of Miyazaki Airplane, a manufacturing concern that built parts for planes. The theme of flying, sometimes on the most fantastic aircrafts, has been crucial in Miyazaki\'s every work — starting with "Laputa: The Castle in the Sky," finding its place in "Porco Rosso" and "Howl\'s Moving Castle", and culminating in the director\'s latest work "The Wind Rises."'
 
   useEffect(() => {
     dispatch(fetchSingleRental(rentalId))
@@ -198,7 +199,7 @@ const RentalDetails = (props) => {
           </RentalDetailsHeader>
           <RentalDetailsHostBio>
             <h3>About your host:</h3>
-            <p>{rental.host && rental.host.bio}</p>
+            <p>{rental.host ? rental.host.bio : defaultRentalBio}</p>
           </RentalDetailsHostBio>
           {/* <RentalDetailsAmenities>
             <h3>What this place offers</h3>

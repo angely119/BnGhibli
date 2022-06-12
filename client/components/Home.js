@@ -28,13 +28,14 @@ const ShadowOverlay = styled.div`
 `;
 
 const Home = (props) => {
-  const { history } = props;
+  const { match, history } = props;
   return (
     <div>
-      <Route path="/home/login">
-        <AuthForm />
+      <Route path={["/home/login", "/home/signup"]}>
+        <AuthForm match={match} history={history}/>
         <ShadowOverlay onClick={() => history.push('/home')}/>
       </Route>
+      {/* <Route path={["/home/login", "/home/signup"]} component={AuthForm} /> */}
       <Splash>
         <SearchBox />
       </Splash>
