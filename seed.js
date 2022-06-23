@@ -35,6 +35,11 @@ const userSeeds = [
     password: 'arrietty',
     profileImageUrl: 'https://i.pinimg.com/736x/a9/ee/aa/a9eeaa397abb69e78d4e90dfaedf1701--the-secret-world-of-arrietty-arietty.jpg',
     bio: 'My family and I have been living in this wonderful house for years. I\'m a huge fan of interior decoration and plant mom so our space aims to bring the outside in. I love to curl up with a book in the chair or take a relaxing soak in the tub by the lush garden leaves while our guests are guaranteed to leave our urban oasis feeling healed and relaxed.'
+  },
+  {
+    username: 'angel',
+    email: 'angel@gmail.com',
+    password: '123'
   }
 ];
 
