@@ -1,36 +1,10 @@
 import React from "react";
-import styled from "styled-components";
-import { StyledLink, LinkContainer } from "./NavBar";
-
-const StyledFooter = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  position: absolute;
-  width:100%;
-  height: 50px;
-  padding: 0px 30px;
-  border-top: solid #dad9d4 1px;
-`;
-
-const FooterLinkContainer = styled(LinkContainer)`
-  height: 30px;
-`;
-
-const FooterStyledLink = styled(StyledLink)`
-  align-items: flex-end;
-  font-size: 15px;
-`;
-
-const StyledSpan = styled.span`
-  display: flex;
-  align-items: flex-end;
-  height: 30px;
-  color: black;
-  font-size: 15px;
-  margin-right: 60px;
-`;
+import {
+  StyledFooter,
+  FooterLinkContainer,
+  FooterStyledLink,
+  StyledSpan,
+} from "./styles";
 
 const Footer = () => {
   return (
