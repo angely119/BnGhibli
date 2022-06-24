@@ -1,5 +1,3 @@
-// SETS UP EXPRESS APP/SERVER
-
 const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
@@ -7,25 +5,19 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
-// Middleware
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// AUTH ROUTES
 app.use('/auth', require('./auth'));
-
-// API ROUTES
 app.use('/api', require('./api'));
 
-// Serve up index.html
 app.get('*', function (req, res, next) {
   res.sendFile(path.join(__dirname, '..', '/public/index.html'));
   // will throw ENOENT: no such file or directory error if path to index.html is incorrect
 });
 
-// 404 Error Handler
 app.use((req, res, next) => {
   if (path.extname(req.path).length) {
     const err = new Error('Not found')
@@ -36,7 +28,6 @@ app.use((req, res, next) => {
   }
 })
 
-// 500 Error Handler
 app.use(function (err, req, res, next) {
   console.error(err);
   console.error(err.stack);

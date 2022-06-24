@@ -1,4 +1,3 @@
-// INDEX FOR DATABASE AND MODELS
 const db = require('./database');
 const User = require('./models/User');
 const Rental = require('./models/Rental');
