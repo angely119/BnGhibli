@@ -7,11 +7,8 @@ const Sequelize = require('sequelize');
 //     }
 //   };
 // }
-// heroku config:set PGSSLMODE=no-verify
 
-// const db = new Sequelize('postgres://localhost:5432/ghiblinb', {
-//   logging: false
-// });
+// INSTEAD CAN write --> heroku config:set PGSSLMODE=no-verify
 
 const db = new Sequelize(process.env.DATABASE_URL || 'postgres://localhost:5432/ghiblinb', {
   logging: false
