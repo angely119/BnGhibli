@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {StyledLabel} from "./SearchBox";
+import { StyledLabel } from "./styles";
 
 // STYLED COMPONENTS
 const RentalBookingContainer = styled.div`

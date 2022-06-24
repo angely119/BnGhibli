@@ -12,7 +12,6 @@ import {
   ProfileButtonIcon,
 } from "./styles";
 
-// FUNCTIONAL COMPONENT
 const NavBar = () => {
   const isLoggedIn = useSelector((state) => !!state.auth.id);
   const userProfileImg = useSelector((state) => state.auth.profileImageUrl);

@@ -67,6 +67,100 @@ const ProfileButtonIcon = styled.div`
   border-radius: 50%;
 `;
 
+// Home
+const Splash = styled.div`
+  display: flex;
+  background-image: url("https://www.ghibli.jp/gallery/kazetachinu042.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 1000px;
+  z-index: 0;
+`;
+
+const ShadowOverlay = styled.div`
+  position: fixed;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+  cursor: pointer;
+`;
+
+// SearchBox
+const StyledSearchBox = styled.div`
+  width: 440px;
+  height: 480px;
+  display: flex;
+  position: absolute;
+  left: 75px;
+  top: 170px;
+  box-sizing: border-box;
+  padding: 35px;
+  background-color: white;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 2px 2px 5px grey;
+  border-radius: 4px;
+  opacity: 0.9;
+`;
+
+const StyledHeader = styled.h1`
+  font-size: 24px;
+  font-weight: bold;
+  color: #484848;
+  margin-left: 5px;
+`;
+
+const StyledLabel = styled.label`
+  font-size: 12px;
+  color: #484848;
+  font-weight: 600;
+`;
+
+const StyledInput = styled.input`
+  border: 1px solid lightgray;
+  height: 50px;
+  color: #484848;
+  margin-bottom: 13px;
+  margin-top: 8px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 15px;
+  border-radius: 4px;
+`;
+
+const CheckInOut = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`;
+
+const InputContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+`;
+
+const SearchButton = styled.input`
+  background-color: #FF5A5F;
+  height: 50px;
+  width: 100px;
+  margin-top: 9px;
+  align-self: flex-end;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid white;
+  border-radius: 5px;
+`;
+
 // Footer
 const StyledFooter = styled.div`
   display: flex;
@@ -106,7 +200,17 @@ export {
   LinkContainer,
   ProfileButton,
   ProfileButtonIcon,
-
+// Home
+  Splash,
+  ShadowOverlay,
+// SearchBox
+  StyledSearchBox,
+  StyledHeader,
+  StyledLabel,
+  StyledInput,
+  CheckInOut,
+  InputContainer,
+  SearchButton,
 // Footer
   StyledFooter,
   FooterLinkContainer,
