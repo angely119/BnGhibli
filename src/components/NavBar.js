@@ -40,7 +40,7 @@ const NavBar = () => {
   return (
     <StyledNavBar>
       <LinkContainer>
-        <img src='/ghibli_icon.png' width="65" height="65"/>
+        <img src='../public/ghibli_icon.png' width="65" height="65"/>
         <StyledLogo to="/">ghibli·nb</StyledLogo>
       </LinkContainer>
       {isLoggedIn
