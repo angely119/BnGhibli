@@ -1,12 +1,5 @@
 module.exports = {
   mode: 'development',
-  entry: [
-    './client/root.js'
-  ],
-  output: {
-    path: __dirname,
-    filename: './public/bundle.js'
-  },
   devtool: 'eval-source-map',
   module: {
     rules: [

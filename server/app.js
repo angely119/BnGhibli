@@ -6,7 +6,8 @@ const bodyParser = require('body-parser');
 const app = express();
 
 app.use(morgan('dev'));
-app.use(express.static(path.join(__dirname, '../public')));
+app.use('/dist', express.static(path.join(__dirname, '../dist')));
+app.use('/public', express.static(path.join(__dirname, '../public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -14,7 +15,7 @@ app.use('/auth', require('./auth'));
 app.use('/api', require('./api'));
 
 app.get('*', function (req, res, next) {
-  res.sendFile(path.join(__dirname, '..', '/public/index.html'));
+  res.sendFile(path.join(__dirname, '../public/index.html'));
   // will throw ENOENT: no such file or directory error if path to index.html is incorrect
 });
 
