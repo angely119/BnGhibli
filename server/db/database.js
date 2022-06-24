@@ -1,12 +1,12 @@
 const Sequelize = require('sequelize');
 
-if(process.env.DATABASE_URL) {
-  config.dialectOptions = {
-    ssl: {
-      rejectUnauthorized: false
-    }
-  };
-}
+// if(process.env.DATABASE_URL) {
+//   config.dialectOptions = {
+//     ssl: {
+//       rejectUnauthorized: false
+//     }
+//   };
+// }
 
 // const db = new Sequelize('postgres://localhost:5432/ghiblinb', {
 //   logging: false
