@@ -5,8 +5,8 @@ import styled from "styled-components";
 export const StyledRentalIndexItem = styled.div`
   display: flex;
   flex-direction: column;
-  flex: 1 0 21%;
   height: 386px;
+  width: 297px;
   cursor: pointer;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;

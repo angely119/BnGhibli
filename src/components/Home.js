@@ -2,9 +2,20 @@ import React from "react";
 import { Route } from 'react-router-dom';
 import { AuthForm, RentalIndex, SearchBox } from "./index";
 import { Splash, ShadowOverlay } from "./styles";
+import styled from "styled-components";
 
-const Home = (props) => {
-  const { match, history } = props;
+const StyledRentalsContainer = styled.div`
+  padding: 40px 80px;
+`;
+
+const StyledRentalIndexHeader = styled.h1`
+  font-size: 24px;
+  font-weight: bold;
+  color: #484848;
+  padding-bottom: 10px;
+`;
+
+const Home = ({ match, history }) => {
   return (
     <div>
       <Route path={["/home/login", "/home/signup"]}>
@@ -12,9 +23,12 @@ const Home = (props) => {
         <ShadowOverlay onClick={() => history.push('/home')}/>
       </Route>
       <Splash>
-        <SearchBox />
+        <SearchBox history={history}/>
       </Splash>
-      <RentalIndex />
+      <StyledRentalsContainer>
+        <StyledRentalIndexHeader>Explore ghibli·nb</StyledRentalIndexHeader>
+        <RentalIndex />
+      </StyledRentalsContainer>
     </div>
   )
 };

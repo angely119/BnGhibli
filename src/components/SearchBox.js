@@ -1,9 +1,10 @@
 import React from "react";
 import { StyledSearchBox, StyledHeader, StyledLabel, StyledInput, CheckInOut, InputContainer, SearchButton } from "./styles";
 
-const SearchBox = () => {
+const SearchBox = ({history}) => {
   const handleSearch = (evt) => {
     evt.preventDefault();
+    history.push('/rentals');
   };
 
   return (
