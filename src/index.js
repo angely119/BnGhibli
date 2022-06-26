@@ -7,6 +7,7 @@ import { App } from './components';
 import store from './store';
 import '../public/index.css';
 import "antd/dist/antd.css";
+// import 'dotenv/config';
 
 const root = ReactDOMClient.createRoot(document.getElementById('main'));
 

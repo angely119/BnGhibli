@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@googlemaps/react-wrapper": "^1.1.35",
     "antd": "^4.21.0",
     "axios": "^0.27.2",
     "bcrypt": "^5.0.1",
