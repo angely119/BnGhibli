@@ -1,7 +1,6 @@
-import { Wrapper } from "@googlemaps/react-wrapper";
+import React from 'react';
 import Map from "./Map";
-
-// const API_KEY = process.env.GOOGLE_MAPS_API_KEY;
+import { Wrapper } from "@googlemaps/react-wrapper";
 
 const RentalsSearch = () => {
   return (

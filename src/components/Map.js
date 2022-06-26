@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { useEffect } from "react";
 
 const Map = ({ center, zoom }) => {
   const ref = useRef();
