@@ -53,8 +53,7 @@ const RentalPriceNum = styled.span`
   font-size: 15px;
 `;
 
-const RentalIndexItem = (props) => {
-  const { rental } = props;
+const RentalIndexItem = ({ rental }) => {
   const history = useHistory();
 
   return (
@@ -62,7 +61,7 @@ const RentalIndexItem = (props) => {
           <StyledRentalImage backgroundImage={`${rental.imageUrls[0]}`}/>
           <StyledRentalInfo>
             <RentalName>{rental.rentalName}</RentalName>
-            <RentalLocation>{rental.location}</RentalLocation>
+            <RentalLocation>{rental.location.name}</RentalLocation>
             <RentalPrice>
               <RentalPriceNum>{`¥${rental.pricePerNight} `}</RentalPriceNum>
               night

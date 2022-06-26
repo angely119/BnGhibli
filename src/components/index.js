@@ -2,7 +2,6 @@ import App from "./App";
 import AuthForm from "./AuthForm";
 import Footer from "./Footer";
 import Home from "./Home";
-import Map from "./Map";
 import NavBar from "./NavBar";
 import ProfileBtnMenuSVG from "./ProfileBtnMenuSVG";
 import RentalBookingForm from "./RentalBookingForm";
@@ -18,7 +17,6 @@ export {
   AuthForm,
   Footer,
   Home,
-  Map,
   NavBar,
   ProfileBtnMenuSVG,
   RentalBookingForm,

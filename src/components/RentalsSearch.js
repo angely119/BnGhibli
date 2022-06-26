@@ -2,14 +2,13 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { fetchRentals } from "../store/rentals";
 import styled from "styled-components";
-import { Wrapper } from "@googlemaps/react-wrapper";
-import { Map, RentalIndexItem } from "./index";
+import { RentalIndexItem } from "./index";
+import MapContainer from './MapContainer';
 
 const StyledSearchRentalsContainer = styled.div`
   display: flex;
   width: 100%;
 `;
-
 
 const StyledSearchRightContainer = styled.div`
   display: flex;
@@ -29,17 +28,13 @@ const StyledRentalsContainer = styled.div`
   gap: 20px 40px;
 `;
 
-const options = {
-  disableDefaultUI: true,
-  zoomControl: true,
-};
-
 const RentalsSearch = () => {
   const rentals = useSelector((state) => state.rentals);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchRentals())
   }, [dispatch]);
+
 
   return (
     <StyledSearchRentalsContainer>
@@ -52,12 +47,7 @@ const RentalsSearch = () => {
         </StyledRentalsContainer>
       </StyledSearchLeftContainer>
       <StyledSearchRightContainer>
-        <Wrapper apiKey={process.env.GOOGLE_MAPS_API_KEY}>
-          <Map
-            zoom={4}
-            center={{lat:38.0, lng:-100.0}}
-            options={options}/>
-        </Wrapper>
+        <MapContainer rentals={rentals}/>
       </StyledSearchRightContainer>
     </StyledSearchRentalsContainer>
   );

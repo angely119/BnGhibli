@@ -14,9 +14,16 @@ const Rental = db.define('rental', {
     },
     defaultValue: 'house'
   },
+  // location: {
+  //   type: Sequelize.STRING,
+  //   defaultValue: 'Mitaka, Tokyo'
+  // },
   location: {
-    type: Sequelize.STRING,
-    defaultValue: 'Mitaka, Tokyo'
+    type: Sequelize.JSON,
+    defaultValue: {
+      "name": "Mitaka, Tokyo",
+      "coords": {"lat":35.69632295289505,"lng":139.57044779325412}
+    }
   },
   pricePerNight: {
     type: Sequelize.INTEGER,

@@ -182,7 +182,7 @@ const RentalDetails = (props) => {
         <RentalHeaderInfo>{rental.reviews && avgRating(rental.reviews)}</RentalHeaderInfo>
         <RentalHeaderInfo>{`${numOfReviews ? numOfReviews : "No"} review(s)`}</RentalHeaderInfo>
         <RentalHeaderInfo>{`⚑ Superhost`}</RentalHeaderInfo>
-        <RentalHeaderInfo>{rental.location}</RentalHeaderInfo>
+        <RentalHeaderInfo>{rental.location && rental.location.name}</RentalHeaderInfo>
       </RentalHeaderContainer>
       <ImagesContainer>
         <MainImage image={rental.imageUrls && rental.imageUrls[0]} />

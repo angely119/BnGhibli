@@ -47,7 +47,11 @@ const rentalSeeds = [
   {
     rentalName: 'Howl\'s Moving Castle',
     rentalType: 'castle',
-    location: 'Porthaven, Ingary',
+    // location: 'Porthaven, Ingary',
+    location: {
+      "name": "Porthaven, Ingary",
+      "coords": {"lat":35.830176684429716,"lng":-79.11296242949983}
+    },
     pricePerNight: 200,
     imageUrls: [
       'https://www.ghibli.jp/gallery/howl049.jpg',
@@ -64,7 +68,11 @@ const rentalSeeds = [
   {
     rentalName: 'Yubaba\'s Traditional Japanese Bathhouse',
     rentalType: 'bathhouse',
-    location: 'Spirit Realm',
+    // location: 'Spirit Realm',
+    location: {
+      "name": "Spirit Realm",
+      "coords":{"lat":47.5216285302522,"lng":7.646735846015371}
+    },
     pricePerNight: 300,
     imageUrls: [
       'https://images.adsttc.com/media/images/6246/e768/3e4b/3186/c600/0004/slideshow/d4epnpx-9cb848c3-9d6b-48b0-beb9-fe9dce8f9460.jpg?1648813921',
@@ -81,7 +89,11 @@ const rentalSeeds = [
   {
     rentalName: 'Kiki\'s Newly Renovated Bakery Loft',
     rentalType: 'house',
-    location: 'City of Koriko',
+    // location: 'City of Koriko',
+    location: {
+      "name": "City of Koriko",
+      "coords":{"lat":57.63534991631135,"lng":18.291728637542704}
+    },
     pricePerNight: 125,
     imageUrls: [
       'https://i.pinimg.com/originals/4e/db/3a/4edb3ac53c586f9f8044eaacf2f20d09.jpg',
@@ -100,7 +112,11 @@ const rentalSeeds = [
   {
     rentalName: 'Satsuki and Mei\'s Relaxing Countryhouse',
     rentalType: 'house',
-    location: ' Tokorozawa City, Saitama Prefecture',
+    // location: 'Tokorozawa City, Saitama Prefecture',
+    location: {
+      "name": "Tokorozawa City, Saitama Prefecture",
+      "coords":{"lat":35.79873446440505,"lng":139.46978944802402}
+    },
     pricePerNight: 150,
     imageUrls: [
       'https://www.boredpanda.com/blog/wp-content/uploads/2020/03/my-neighbor-totoro-satsuki-mei-house-japan-1-5e7de518d84fd__700.jpg',
@@ -117,7 +133,11 @@ const rentalSeeds = [
   {
     rentalName: 'Arrietty\'s Spacious Underground Doll House',
     rentalType: 'house',
-    location: 'Below Sho\'s House',
+    // location: 'Below Sho\'s House',
+    location: {
+      "name": "Below Sho\'s House",
+      "coords":{"lat":35.69632295289505,"lng":139.57044779325412}
+    },
     pricePerNight: 50,
     imageUrls: [
       'https://i.pinimg.com/originals/40/c4/7b/40c47bd887cc4ed87b9a6bd01914ee3a.jpg',
@@ -135,7 +155,11 @@ const rentalSeeds = [
   {
     rentalName: 'Ponyo\'s Underwater Harbor',
     rentalType: 'harbor',
-    location: 'Tomonoura, Hiroshima Prefecture',
+    // location: 'Tomonoura, Hiroshima Prefecture',
+    location: {
+      "name": "Tomonoura, Hiroshima Prefecture",
+      "coords":{"lat":34.38311226796925,"lng":133.3840293392868}
+    },
     pricePerNight: 500,
     imageUrls: [
       'https://www.ghibli.jp/gallery/ponyo050.jpg',
@@ -148,7 +172,11 @@ const rentalSeeds = [
   {
     rentalName: 'Princess Mononoke\'s Minimalist Cabin',
     rentalType: 'cabin',
-    location: 'Cedar Forest',
+    // location: 'Cedar Forest',
+    location: {
+      "name": "Cedar Forest",
+      "coords":{"lat":43.054173283134205,"lng":141.30975704662706}
+    },
     pricePerNight: 10,
     imageUrls: [
       'https://data.whicdn.com/images/317557760/original.jpg',
@@ -165,7 +193,11 @@ const rentalSeeds = [
   {
     rentalName: 'Hotel Kusakaru',
     rentalType: 'hotel',
-    location: 'Karuizawa, Nagano Prefecture',
+    // location: 'Karuizawa, Nagano Prefecture',
+    location: {
+      "name": "Karuizawa, Nagano Prefecture",
+      "coords":{"lat":36.348532310953644,"lng":138.59701360674592}
+    },
     pricePerNight: 800,
     imageUrls: [
       'https://images.lifestyleasia.com/wp-content/uploads/sites/3/2020/02/10011812/Hassan-Rashid-on-Youtube-e1579674659229-1024x545.jpg',
