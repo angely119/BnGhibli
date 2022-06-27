@@ -1,22 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import { StyledSearchBox, StyledHeader, StyledLabel, StyledInput, CheckInOut, InputContainer, SearchButton } from "./styles";
 
 const SearchBox = ({history}) => {
+  const [searchInputs, setSearchInputs] = useState({});
+
   const handleSearch = (evt) => {
     evt.preventDefault();
-    history.push('/rentals');
+    searchInputs.location ? history.push(`/rentals?location=${searchInputs.location}`) : history.push(`/rentals`);
   };
+
+  const handleChange = (evt) => {
+    setSearchInputs({
+      [evt.target.name] : evt.target.value
+    });
+  }
 
   return (
     <StyledSearchBox>
       <StyledHeader>Book unique places to stay and things to do.</StyledHeader>
       <form onSubmit={handleSearch}>
         <InputContainer>
-        <StyledLabel htmlFor='where'>WHERE</StyledLabel>
+        <StyledLabel htmlFor='location'>WHERE</StyledLabel>
           <StyledInput
-            name='where'
+            name='location'
             type='text'
-            placeholder='Anywhere'/>
+            placeholder='Anywhere'
+            onChange={handleChange}
+          />
         </InputContainer>
         <CheckInOut>
           <InputContainer>

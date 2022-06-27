@@ -13,9 +13,10 @@ const setRentals = (rentals) => {
 };
 
 // THUNK CREATORS
-export const fetchRentals = () => {
+export const fetchRentals = (search) => {
+  debugger
   return async (dispatch) => {
-    const { data: rentals } = await axios.get('/api/rentals');
+    const { data: rentals } = await axios.get(`/api/rentals${search ? search : ""}`);
     dispatch(setRentals(rentals));
   }
 };

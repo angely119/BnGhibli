@@ -50,6 +50,7 @@ const rentalSeeds = [
     // location: 'Porthaven, Ingary',
     location: {
       "name": "Porthaven, Ingary",
+      "address": "Porthaven Pl, North Carolina 27516, USA",
       "coords": {"lat":35.830176684429716,"lng":-79.11296242949983}
     },
     pricePerNight: 200,
@@ -71,6 +72,7 @@ const rentalSeeds = [
     // location: 'Spirit Realm',
     location: {
       "name": "Spirit Realm",
+      "address": "Oberdorf 7, 4132 Muttenz, Switzerland",
       "coords":{"lat":47.5216285302522,"lng":7.646735846015371}
     },
     pricePerNight: 300,
@@ -92,6 +94,7 @@ const rentalSeeds = [
     // location: 'City of Koriko',
     location: {
       "name": "City of Koriko",
+      "address": "Visby, Sweden",
       "coords":{"lat":57.63534991631135,"lng":18.291728637542704}
     },
     pricePerNight: 125,
@@ -115,6 +118,7 @@ const rentalSeeds = [
     // location: 'Tokorozawa City, Saitama Prefecture',
     location: {
       "name": "Tokorozawa City, Saitama Prefecture",
+      "address": "Saitama, Japan",
       "coords":{"lat":35.79873446440505,"lng":139.46978944802402}
     },
     pricePerNight: 150,
@@ -136,6 +140,7 @@ const rentalSeeds = [
     // location: 'Below Sho\'s House',
     location: {
       "name": "Below Sho\'s House",
+      "address": "Mitaka, Tokyo 181-0013, Japan",
       "coords":{"lat":35.69632295289505,"lng":139.57044779325412}
     },
     pricePerNight: 50,
@@ -158,6 +163,7 @@ const rentalSeeds = [
     // location: 'Tomonoura, Hiroshima Prefecture',
     location: {
       "name": "Tomonoura, Hiroshima Prefecture",
+      "address": "Tomo Tomocho, Fukuyama, Hiroshima 720-0201, Japan",
       "coords":{"lat":34.38311226796925,"lng":133.3840293392868}
     },
     pricePerNight: 500,
@@ -175,6 +181,7 @@ const rentalSeeds = [
     // location: 'Cedar Forest',
     location: {
       "name": "Cedar Forest",
+      "address": "474 Miyagaoka, Chuo Ward, Sapporo, Hokkaido 064-0959, Japan",
       "coords":{"lat":43.054173283134205,"lng":141.30975704662706}
     },
     pricePerNight: 10,
@@ -196,6 +203,7 @@ const rentalSeeds = [
     // location: 'Karuizawa, Nagano Prefecture',
     location: {
       "name": "Karuizawa, Nagano Prefecture",
+      "address": "Kitasaku District, Nagano, Japan",
       "coords":{"lat":36.348532310953644,"lng":138.59701360674592}
     },
     pricePerNight: 800,

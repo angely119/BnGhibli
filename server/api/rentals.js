@@ -1,15 +1,35 @@
 // API/RENTALS ROUTES
 const router = require('express').Router();
+const Sequelize = require('sequelize');
 const { User, Rental, Booking, Review } = require('../db');
 
 // GET /api/rentals/
 router.get('/', async (req, res, next) => {
+  // req.query: {	"location": "spirit realm"}
   try {
-    const rentals = await Rental.findAll({
-      where: req.query,
-      include: ['host', Booking, Review]
-    });
-    res.send(rentals);
+    if (req.query.location) {
+      const searchRentals = await Rental.findAll({
+        where: {
+          location: {
+            [Sequelize.Op.or] : {
+              name: {
+                [Sequelize.Op.match] : req.query.location
+              },
+              address: {
+                [Sequelize.Op.match] : req.query.location
+              }
+            }
+          }
+        },
+        include: ['host', Booking, Review]
+      });
+      res.send(searchRentals);
+    } else {
+      const rentals = await Rental.findAll({
+        include: ['host', Booking, Review]
+      });
+      res.send(rentals);
+    }
   } catch (error) {
     next(error);
   }

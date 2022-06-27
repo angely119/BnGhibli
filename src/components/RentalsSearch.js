@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from "react-redux";
+import { useLocation } from "react-router-dom";
 import { fetchRentals } from "../store/rentals";
 import styled from "styled-components";
 import { RentalIndexItem } from "./index";
@@ -31,9 +32,10 @@ const StyledRentalsContainer = styled.div`
 const RentalsSearch = () => {
   const rentals = useSelector((state) => state.rentals);
   const dispatch = useDispatch();
+  const { search } = useLocation();
   useEffect(() => {
-    dispatch(fetchRentals())
-  }, [dispatch]);
+    dispatch(fetchRentals(search))
+  }, [dispatch, search]);
 
 
   return (

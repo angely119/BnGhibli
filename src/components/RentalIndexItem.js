@@ -8,15 +8,16 @@ export const StyledRentalIndexItem = styled.div`
   height: 386px;
   width: 297px;
   cursor: pointer;
-  -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
-  -webkit-transition-property: transform;
   transition-property: transform;
   &:hover {
-    -webkit-transform: scale(1.05);
-    transform: scale(1.05);
+    transform: ${((props => props.className) === "mapRental") ? "scale(0)" : "scale(1.05)"}
   }
 `;
+
+// &:hover {
+//   transform: scale(1.05);
+// }
 
 const StyledRentalImage = styled.div`
   background-image: url(${props => props.backgroundImage});
@@ -53,7 +54,8 @@ const RentalPriceNum = styled.span`
   font-size: 15px;
 `;
 
-const RentalIndexItem = ({ rental }) => {
+const RentalIndexItem = (props) => {
+  const { rental } = props;
   const history = useHistory();
 
   return (

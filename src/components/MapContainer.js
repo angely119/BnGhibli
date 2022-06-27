@@ -1,13 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useCallback } from 'react';
 import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/api';
 import styled from "styled-components";
-import RentalIndexItem from './index';
+import RentalIndexItem from './RentalIndexItem';
 
 const MapContainer = ({ rentals }) => {
   const [ selectedRental, setSelectedRental ] = useState({});
   const onSelect = rental => {
     setSelectedRental(rental);
   };
+
+  // Stores current reference of map to useRef to access it throughout code without causing rerenders
+  const mapRef = useRef();
+  const onMapLoad = useCallback((map) => {
+    // map passed from GoogleMap component
+    mapRef.current = map;
+  }, []);
+
   const mapStyles = {
     height: "90vh",
     width: "100%"
