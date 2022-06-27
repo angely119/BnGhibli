@@ -44,7 +44,10 @@ const RentalsSearch = () => {
         <h3>Showing {rentals.length} of 8 results:</h3>
         <StyledRentalsContainer>
           {rentals.map(rental => (
-            <RentalIndexItem key={rental.id} rental={rental} />
+            <RentalIndexItem
+              key={rental.id}
+              rental={rental}
+            />
           ))}
         </StyledRentalsContainer>
       </StyledSearchLeftContainer>

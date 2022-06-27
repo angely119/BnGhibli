@@ -11,13 +11,17 @@ export const StyledRentalIndexItem = styled.div`
   transition-duration: 0.3s;
   transition-property: transform;
   &:hover {
-    transform: ${((props => props.className) === "mapRental") ? "scale(0)" : "scale(1.05)"}
+    transform: scale(1.05);
   }
 `;
 
-// &:hover {
-//   transform: scale(1.05);
-// }
+const StyledMapRentalIndexItem = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  width: 300px;
+  cursor: pointer;
+`;
 
 const StyledRentalImage = styled.div`
   background-image: url(${props => props.backgroundImage});
@@ -55,11 +59,24 @@ const RentalPriceNum = styled.span`
 `;
 
 const RentalIndexItem = (props) => {
-  const { rental } = props;
+  const { rental, isMapInfo } = props;
   const history = useHistory();
 
   return (
-      <StyledRentalIndexItem onClick={() => history.push(`/rentals/${rental.id}`)}>
+    isMapInfo ?
+      (<StyledMapRentalIndexItem onClick={() => history.push(`/rentals/${rental.id}`)}>
+        <StyledRentalImage backgroundImage={`${rental.imageUrls[0]}`}/>
+          <StyledRentalInfo>
+            <RentalName>{rental.rentalName}</RentalName>
+            <RentalLocation>{rental.location.name}</RentalLocation>
+            <RentalPrice>
+              <RentalPriceNum>{`¥${rental.pricePerNight} `}</RentalPriceNum>
+              night
+            </RentalPrice>
+          </StyledRentalInfo>
+      </StyledMapRentalIndexItem>)
+    :
+      (<StyledRentalIndexItem onClick={() => history.push(`/rentals/${rental.id}`)}>
           <StyledRentalImage backgroundImage={`${rental.imageUrls[0]}`}/>
           <StyledRentalInfo>
             <RentalName>{rental.rentalName}</RentalName>
@@ -69,7 +86,7 @@ const RentalIndexItem = (props) => {
               night
             </RentalPrice>
           </StyledRentalInfo>
-      </StyledRentalIndexItem>
+      </StyledRentalIndexItem>)
   )
 };
 

@@ -1,6 +1,5 @@
 import React, { useState, useRef, useCallback } from 'react';
 import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/api';
-import styled from "styled-components";
 import RentalIndexItem from './RentalIndexItem';
 
 const MapContainer = ({ rentals }) => {
@@ -37,7 +36,7 @@ const MapContainer = ({ rentals }) => {
         <GoogleMap
           mapContainerStyle={mapStyles}
           zoom={7}
-          center={defaultCenter}
+          center={(rentals.length === 8 || rentals.length === 0) ? defaultCenter: rentals[0].location.coords}
           options={options}
           onClick={() => setSelectedRental({})}
         >
@@ -53,7 +52,7 @@ const MapContainer = ({ rentals }) => {
               clickable={true}
               onCloseClick={() => setSelectedRental({})}
             >
-              <RentalIndexItem className="mapRental" rental={selectedRental}/>
+              <RentalIndexItem isMapInfo={true} rental={selectedRental}/>
             </InfoWindow>
             )
           }
