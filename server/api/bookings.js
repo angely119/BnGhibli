@@ -1,13 +1,16 @@
 // API/BOOKINGS ROUTES
 const router = require('express').Router();
+const verifyToken = require('../auth/verifyToken');
 const { User, Rental, Booking, Review } = require('../db');
 
-// GET /api/bookings/
-router.get('/', async (req, res, next) => {
+// GET /api/bookings/ - returns bookings for the logged-in user
+router.get('/', verifyToken, async (req, res, next) => {
   try {
     const bookings = await Booking.findAll({
-      where: req.query,
-      include: ['guest', Rental]
+      where: {
+        guestId: req.user.id
+      },
+      include: [Rental]
     });
     res.send(bookings);
   } catch (error) {
@@ -15,12 +18,12 @@ router.get('/', async (req, res, next) => {
   }
 });
 
-// POST /api/bookings - Creates a booking for a rental
-router.post('/', async (req, res, next) => {
+// POST /api/bookings - Creates a booking for a rental for the logged in user
+router.post('/', verifyToken, async (req, res, next) => {
   try {
     const newBooking = await Booking.create(req.body);
+    await newBooking.setGuest(req.user);
     // req.body includes rentalId
-    // can also set guest in req.body
     res.send(await newBooking.reload({
       include: ['guest', Rental]
     })); // sends back the new Booking including guest and rental

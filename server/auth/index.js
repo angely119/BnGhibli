@@ -1,6 +1,7 @@
 // AUTH ROUTES
 const router = require('express').Router();
 const { User } = require('../db');
+const verifyToken = require('../auth/verifyToken');
 module.exports = router;
 
 // POST /auth/login
@@ -33,11 +34,9 @@ router.post('/signup', async (req, res, next) => {
 })
 
 // GET /auth/user
-router.get('/user', async (req, res, next) => {
+router.get('/user', verifyToken, async (req, res, next) => {
   try {
-    res.send(await User.findByToken(req.headers.authorization))
-    // Takes in the token from req.headers
-    // headers: { authorization: token }
+    res.send(req.user);
   } catch (ex) {
     next(ex)
   }
