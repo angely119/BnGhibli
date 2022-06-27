@@ -67,7 +67,10 @@ const AuthForm = (props) => {
   const error = useSelector((state) => state.auth.error);
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    dispatch(authenticate(evt.target.email.value, evt.target.password.value, evt.target.name, history));
+    history.location.pathname === '/home/signup' ?
+    dispatch(authenticate(evt.target.email.value, evt.target.password.value, evt.target.name.value, "signup", history))
+    :
+    dispatch(authenticate(evt.target.email.value, evt.target.password.value, null, "login", history))
   };
 
   return (
@@ -83,7 +86,7 @@ const AuthForm = (props) => {
             <FormContainerTop>
               <AuthFormInput name='email' type='text' placeholder='Email' bordered={false}/>
             </FormContainerTop>
-            {match && match.path === '/home/signup' &&
+            {history.location.pathname === '/home/signup' &&
               <FormContainerBottom>
                 <AuthFormInput name='name' type='text' placeholder='Full Name' bordered={false}/>
               </FormContainerBottom>
