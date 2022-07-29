@@ -14,10 +14,6 @@ const Rental = db.define('rental', {
     },
     defaultValue: 'house'
   },
-  // location: {
-  //   type: Sequelize.STRING,
-  //   defaultValue: 'Mitaka, Tokyo'
-  // },
   location: {
     type: Sequelize.JSON,
     defaultValue: {
