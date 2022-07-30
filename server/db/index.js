@@ -33,7 +33,7 @@ Review.belongsTo(Rental);
 // Booking/Rental One-to-One
 Rental.hasOne(Booking);
 Booking.belongsTo(Rental);
-// generates rentalId in Booking model
+
 
 
 module.exports = {
