@@ -14,28 +14,34 @@ const setAuth = (auth) => {
 };
 
 export const logout = () => {
+  window.localStorage.removeItem(TOKEN);
   return {
     type: SET_AUTH,
     auth: {}
   }
 };
 
-// THUNK CREATORS
-
 // FETCHES THE USER OBJECT (AFTER AUTHENTICATION)
 export const fetchAuthUser = (history) => {
   return async (dispatch) => {
-    const token = window.localStorage.getItem(TOKEN);
-    if (!token) {
-      throw new Error;
-    }
-    const res = await axios.get('/auth/user', {
-      headers: {
-        authorization: token
+    try {
+      const token = window.localStorage.getItem(TOKEN);
+      if (!token) {
+        throw new Error;
       }
-    });
-    history.push('/home'); // Redirects to /home after user is fetched
-    return dispatch(setAuth(res.data));
+      const res = await axios.get('/auth/user', {
+        headers: {
+          authorization: token
+        }
+      });
+      if (history.location.pathname !== "/home") {
+        history.push('/home'); // Redirects to /home after user is fetched
+      }
+      return dispatch(setAuth(res.data));
+    } catch (error) {
+      const authError = { error };
+      return dispatch(setAuth(authError));
+    }
   }
 };
 

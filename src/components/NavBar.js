@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Dropdown, Menu } from "antd";
 import { ProfileBtnMenuSVG } from "./index";
-import { logout } from "../store/auth";
+import { fetchAuthUser, logout } from "../store/auth";
 import { withRouter } from 'react-router';
 import {
   StyledNavBar,
@@ -14,9 +14,14 @@ import {
 } from "./styles";
 
 const NavBar = ({history}) => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchAuthUser(history));
+  }, [dispatch]);
+
   const isLoggedIn = useSelector((state) => !!state.auth.id);
   const userProfileImg = useSelector((state) => state.auth.profileImageUrl);
-  const dispatch = useDispatch();
+
   const handleClick = (evt) => {
     evt.key === '1' && history.push('trips');
     evt.key === '2' && dispatch(logout());
