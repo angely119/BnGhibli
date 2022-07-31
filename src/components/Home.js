@@ -1,19 +1,7 @@
 import React from "react";
 import { Route } from 'react-router-dom';
 import { AuthForm, RentalIndex, SearchBox } from "./index";
-import { Splash, ShadowOverlay } from "./styles";
-import styled from "styled-components";
-
-const StyledRentalsContainer = styled.div`
-  padding: 40px 80px;
-`;
-
-const StyledRentalIndexHeader = styled.h1`
-  font-size: 24px;
-  font-weight: bold;
-  color: #484848;
-  padding-bottom: 10px;
-`;
+import { PageContainer, Splash, ShadowOverlay, StyledRentalIndexHeader } from "./styles";
 
 const Home = ({ match, history }) => {
   return (
@@ -25,10 +13,10 @@ const Home = ({ match, history }) => {
       <Splash>
         <SearchBox history={history}/>
       </Splash>
-      <StyledRentalsContainer>
+      <PageContainer>
         <StyledRentalIndexHeader>Explore ghibli·nb</StyledRentalIndexHeader>
         <RentalIndex />
-      </StyledRentalsContainer>
+      </PageContainer>
     </div>
   )
 };

@@ -91,6 +91,13 @@ const ShadowOverlay = styled.div`
   cursor: pointer;
 `;
 
+const StyledRentalIndexHeader = styled.h1`
+  font-size: 24px;
+  font-weight: bold;
+  color: #484848;
+  padding-bottom: 10px;
+`;
+
 // SearchBox
 const StyledSearchBox = styled.div`
   width: 440px;
@@ -161,8 +168,15 @@ const SearchButton = styled.input`
   border-radius: 5px;
 `;
 
+// Rental Index
+const StyledRentalsIndex = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 30px;
+`;
+
 // Rental Details
-const RentalContainer = styled.div`
+const PageContainer = styled.div`
   padding: 40px 80px
 `;
 
@@ -350,6 +364,7 @@ export {
 // Home
   Splash,
   ShadowOverlay,
+  StyledRentalIndexHeader,
 // SearchBox
   StyledSearchBox,
   StyledHeader,
@@ -358,8 +373,10 @@ export {
   CheckInOut,
   InputContainer,
   SearchButton,
+// Rental Index
+  StyledRentalsIndex,
 // Rental Details
-  RentalContainer,
+  PageContainer,
   RentalHeaderName,
   RentalHeaderContainer,
   RentalHeaderInfo,

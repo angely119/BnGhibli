@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchSingleRental } from "../store/singleRental";
 import { RentalBookingForm } from "./index";
 import {
-  RentalContainer,
+  PageContainer,
   RentalHeaderName,
   RentalHeaderContainer,
   RentalHeaderInfo,
@@ -45,7 +45,7 @@ const RentalDetails = (props) => {
   }, []);
 
   return (
-    <RentalContainer>
+    <PageContainer>
       <RentalHeaderName>{rental.rentalName}</RentalHeaderName>
       <RentalHeaderContainer>
         <RentalHeaderInfo>{rental.reviews && avgRating(rental.reviews)}</RentalHeaderInfo>
@@ -84,7 +84,7 @@ const RentalDetails = (props) => {
           <RentalBookingForm rental={rental} numOfReviews={numOfReviews} avgRating={avgRating}/>
         </RentalDetailsRightContainer>
       </RentalDetailsContainer>
-    </RentalContainer>
+    </PageContainer>
   )
 };
 
