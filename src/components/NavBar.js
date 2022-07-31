@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Dropdown, Menu } from "antd";
 import { ProfileBtnMenuSVG } from "./index";
 import { logout } from "../store/auth";
+import { withRouter } from 'react-router';
 import {
   StyledNavBar,
   StyledLink,
@@ -12,12 +13,12 @@ import {
   ProfileButtonIcon,
 } from "./styles";
 
-const NavBar = () => {
+const NavBar = ({history}) => {
   const isLoggedIn = useSelector((state) => !!state.auth.id);
   const userProfileImg = useSelector((state) => state.auth.profileImageUrl);
   const dispatch = useDispatch();
   const handleClick = (evt) => {
-    evt.key === '1' && console.log('TRIPS');
+    evt.key === '1' && history.push('trips');
     evt.key === '2' && dispatch(logout());
   };
 
@@ -65,4 +66,4 @@ const NavBar = () => {
   )
 };
 
-export default NavBar;
+export default withRouter(NavBar);

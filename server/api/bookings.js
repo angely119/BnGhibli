@@ -18,7 +18,7 @@ router.get('/', verifyToken, async (req, res, next) => {
   }
 });
 
-// POST /api/bookings - Creates a booking for a rental for the logged in user
+// POST /api/bookings - Creates a booking for a rental for the logged in user if dates available
 router.post('/', verifyToken, async (req, res, next) => {
   const {checkInDate, checkOutDate, rentalId } = req.body;
   try {

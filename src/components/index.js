@@ -11,6 +11,7 @@ import RentalIndexItem from "./RentalIndexItem";
 import RentalsSearch from "./RentalsSearch";
 import Routes from "./Routes";
 import SearchBox from "./SearchBox";
+import Trips from "./Trips";
 
 export {
   App,
@@ -25,5 +26,6 @@ export {
   RentalIndexItem,
   RentalsSearch,
   Routes,
-  SearchBox
+  SearchBox,
+  Trips,
 };
