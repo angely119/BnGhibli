@@ -1,6 +1,11 @@
 import styled from "styled-components";
 import { Link } from 'react-router-dom';
 
+const colors = {
+  peach: '#FF5A5F',
+
+};
+
 // NavBar
 const StyledNavBar = styled.nav`
   display: flex;
@@ -177,7 +182,8 @@ const StyledRentalsIndex = styled.div`
 
 // Rental Details
 const PageContainer = styled.div`
-  padding: 40px 80px
+  padding: 40px 80px;
+  height: 100vh;
 `;
 
 const RentalHeaderName = styled.h1`
